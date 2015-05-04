@@ -9,5 +9,6 @@ arduino = serial.Serial(com_port, 9600, timeout=0.1)
 
 while True:
 	data = arduino.readline()[:-2] #the last bit gets rid of the new-line chars
-	if data: print(data, end="")
+	data = data.decode("utf-8")
+	if data: print(data)
 
